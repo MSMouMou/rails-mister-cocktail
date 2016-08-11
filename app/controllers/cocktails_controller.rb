@@ -13,6 +13,14 @@ def new
   @cocktail = Cocktail.new
 end
 
+def create
+    @cocktail = cocktail.new(cocktail_params)
+  if @cocktail.save
+    redirect_to cocktail_path(@cocktail)
+  else
+    render :new
+  end
+end
 
 private
 
